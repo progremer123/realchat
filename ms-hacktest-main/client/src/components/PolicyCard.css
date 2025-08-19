@@ -1,0 +1,59 @@
+/* 카드 컨테이너 */
+.pcard {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+
+/* 제목 */
+.pcard-title {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+}
+
+/* 리스트 */
+.pcard-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.pcard-list > li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+  align-items: flex-start;
+}
+.pcard-ico { font-size: 18px; line-height: 1; margin-top: 2px; }
+.pcard-label { font-size: 13px; font-weight: 700; color: #374151; }
+.pcard-text { font-size: 14px; color: #4b5563; }
+.pcard-text a { color: #2563eb; text-decoration: none; }
+.pcard-text a:hover { text-decoration: underline; }
+
+/* 액션 */
+.pcard-actions {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid #f3f4f6;
+  margin-top: 12px;
+  padding-top: 12px;
+}
+.pcard-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+.pcard-btn:hover { background: #f9fafb; }
+.pcard-btn-ico { font-size: 16px; }

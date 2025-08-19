@@ -11,7 +11,7 @@ const chatRoutes = require('./routes/chat');
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors({ origin: ['https://tripletaichatbot.store/'], credentials: true }));
+app.use(cors({ origin: ['https://tripletaichatbot.store'], credentials: true }));
 app.use(express.json());
 
 const pool = mysql.createPool({

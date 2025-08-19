@@ -11,13 +11,13 @@ const chatRoutes = require('./routes/chat');
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors({ origin: ['http://localhost:3000'], credentials: true }));
+app.use(cors({ origin: ['https://tripletaichatbot.store/'], credentials: true }));
 app.use(express.json());
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST || 'localhost',
   user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || '',
+  password: process.env.DB_PASSWORD || '1234',
   database: process.env.DB_NAME || 'myusers',
   waitForConnections: true,
   connectionLimit: 10,
@@ -30,7 +30,13 @@ app.use('/api/profile', profileRoutes);
 app.use('/api/bookmarks', bookmarksRoutes);
 app.use('/api/chat', chatRoutes);
 
-app.get('/healthz', (_req, res) => res.json({ ok: true }));
+app.get('/healthz', (_req, res) => {
+  res.send('<h1>Welcome to tripletaichatbot.store</h1>');
+});
+
+app.get('/', (_req, res) => {
+  res.send('<h1>Welcome to tripletaichatbot.store</h1>');
+});
 
 // 404 핸들러
 app.use('/api', (req, res) => res.status(404).json({ message: 'not_found', path: req.originalUrl }));
